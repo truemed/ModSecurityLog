@@ -1,6 +1,7 @@
 # ModSecurity Log Capture Service
 
-[ModSecurity](https://github.com/SpiderLabs/ModSecurity) is an open source, cross platform web application firewall for IIS, Apache and Nginx
+[ModSecurity](https://github.com/SpiderLabs/ModSecurity) is an open source, cross platform web application firewall for IIS, Apache and Nginx.
+\s\s \s\s
 ModSecurity Log Capture Service is a Windows Service that watches the log folder and automatically captures the logs and sends them to a configured NLog target, like a SQL Server Database.
 
 * [How to install](#how-to-install)
