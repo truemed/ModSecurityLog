@@ -1,26 +1,24 @@
-# Visual Studio Emmet
+# ModSecurity Log Capture Service
 
-Official [Emmet](http://emmet.io) site, [learn more about Emmet features](http://docs.emmet.io).
+[ModSecurity](https://github.com/SpiderLabs/ModSecurity) is an open source, cross platform web application firewall for IIS, Apache and Nginx
+ModSecurity Log Capture Service is a Windows Service that watches the log folder and automatically captures the logs and sends them to a configured NLog target, like a SQL Server Database.
 
 * [How to install](#how-to-install)
-* [How to add syntax and profile rules](#how-to-add-syntax-and-profile-rules)
-* [How to add abbreviations and snippets](#how-to-add-abbreviations-and-snippets)
-* [To do](#to-do)
+* [How to configure NLog/Database target settings](#how-to-configure)
 
 ## How to install
 
-1. Run `bin\Jacky.Emmet.vsix`.
-2. Restart `Microsoft Visual Studio`.
+1. Unzip the files in the release to a folder.
+2. Run the `install.ps1` command.
+3. Open up Local Services (Control Panel > Administrative Tools > Services) and select "ModSecurityLog" and click "Start".
 
-## How to add syntax and profile rules
+## How to configure NLog/Database target settings
 
-1. Goto `%LocalAppData%\Microsoft\VisualStudio\{VERSION}\Extensions`, find the extension folder.
-2. Add rules to `settings.json`.
+1. Open `nlog.config`, file.
+2. Update the `<target>` to match your Database settings and table format.
+3. Alternatively, create your own custom NLog `<target>`
 
-## How to add abbreviations and snippets
-1. Goto `%LocalAppData%\Microsoft\VisualStudio\{VERSION}\Extensions`, find the extension folder.
-2. Add abbreviations and snippets to `snippets.json`.
-## To do
 
-1. Extension support
-2. Expand abbreviations with `Tab` key
+## How to uninstall
+1. Stop the service (Control Panel > Administrative Tools > Services > ModSecurityLog)
+2. Run the `install.ps1 -uninstall` command.
