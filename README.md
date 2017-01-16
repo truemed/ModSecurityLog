@@ -22,12 +22,14 @@ If it does not start, update the permissions on the folder to allow the "Network
 
 1. Open the `modsecurity_iis.conf` file and update it to the following:
 
+    ````
     SecAuditEngine RelevantOnly
     SecAuditLogType Concurrent
     SecAuditLogFormat JSON
     SecAuditLogStorageDir "D:\Path\To\Log\Directory"
     SecAuditLog "D:\Path\To\Log\Directory\modsec_audit.log"
     
+    ````
 2. Back in this service's folder, open up the `ModSecurityLogService.exe.config` file and update the `LogPath` to be the same as the SecAuditLogStorageDir value.
 
 Ensure that you restart this windows service (ModSecurityLog) any time you make changes to the `ModSecurityLogService.exe.config` file.
