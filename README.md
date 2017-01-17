@@ -10,11 +10,12 @@ It uses a Windows File Watcher, listening to the FileCreated event, at which tim
 * [How to install](#how-to-install-the-windows-service)
 * [Configure ModSecurity](#configure-modsecurity)
 * [How to configure NLog/Database target settings](#how-to-configure-nlogdatabase-target-settings)
+* [How to uninstall](#how-to-uninstall)
 
-## How to install the windows service
+## How to install the Windows Service
 
 1. Unzip the files in the release to a folder.
-2. Run the `install.ps1` command. (This uses the `InstallUtil` from the .NET framework.)
+2. Run the `install.ps1` command (Open Powershell as Administrator). (This uses the `InstallUtil` from the .NET framework.)
 3. Open up Local Services (Control Panel > Administrative Tools > Services) and select "ModSecurityLog" and click "Start".
 If it does not start, update the permissions on the folder to allow the "Network Service" user read access.
 
