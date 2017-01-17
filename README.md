@@ -5,9 +5,10 @@
 # ModSecurity Logging Windows Service 
 
 ModSecurity Log Capture Service is a Windows Service that watches the log folder and automatically captures the logs and sends them to a configured NLog target, like a SQL Server Database.
-It uses a Windows File Watcher, listening to the FileCreated event, at which time it reads the log file, sends it to NLog, which sends it to the Database target.
+It uses a Windows File Watcher, listening to the FileCreated event, at which time it reads the log file, uses NLogto send to the Database. Since it uses [Nlog](https://github.com/NLog/NLog), 
+it could be [any Nlog Target](https://github.com/nlog/nlog/wiki/Targets).
 
-* [How to install](#how-to-install-the-windows-service)
+* [How to install the Windows Service](#how-to-install-the-windows-service)
 * [Configure ModSecurity](#configure-modsecurity)
 * [How to configure NLog/Database target settings](#how-to-configure-nlogdatabase-target-settings)
 * [How to uninstall](#how-to-uninstall)
@@ -17,7 +18,7 @@ It uses a Windows File Watcher, listening to the FileCreated event, at which tim
 1. Unzip the files in the release to a folder.
 2. Run the `install.ps1` command (Open Powershell as Administrator). (This uses the `InstallUtil` from the .NET framework.)
 3. Open up Local Services (Control Panel > Administrative Tools > Services) and select "ModSecurityLog" and click "Start".
-If it does not start, update the permissions on the folder to allow the "Network Service" user read access.
+You may need to update the permissions on the folder to allow the "Network Service" user read access for the service to start.
 
 ## Configure ModSecurity
 
