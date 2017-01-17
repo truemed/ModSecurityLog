@@ -1,7 +1,7 @@
 # ModSecurity IIS Logging Windows Service 
 
-ModSecurity Log Capture Service is a Windows Service that watches the log folder and automatically captures the logs and sends them to a configured NLog target, like a SQL Server Database.
-It uses a Windows File Watcher, listening to the FileCreated event, at which time it reads the log file, uses NLog to send the log to the Database. 
+ModSecurity Log Capture Service is a Windows Service that watches the ModSecurity log folder and automatically captures the logs and sends them to a configured NLog target, like a SQL Server Database.
+It uses a Windows File Watcher, listening to the FileCreated event, at which time it reads the log file, and uses NLog to send the log to the Database. 
 Since it uses [NLog](https://github.com/NLog/NLog), 
 it could be [any NLog Target](https://github.com/nlog/nlog/wiki/Targets).
 
@@ -32,7 +32,7 @@ You may need to update the permissions on the folder to allow the "Network Servi
     SecAuditLog "D:\Path\To\Log\Directory\modsec_audit.log"
     
     ````
-2. Back in this service's folder, open up the `ModSecurityLogService.exe.config` file and update the `LogPath` to be the same as the SecAuditLogStorageDir value.
+2. Back in this service's folder, open up the `ModSecurityLogService.exe.config` file and update the `LogPath` to be the same as the `SecAuditLogStorageDir` value.
 
 Ensure that you restart this windows service (ModSecurityLog) any time you make changes to the `ModSecurityLogService.exe.config` file.
 
