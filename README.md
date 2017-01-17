@@ -16,9 +16,10 @@ it could be [any NLog Target](https://github.com/nlog/nlog/wiki/Targets).
 
 ## How to install the Windows Service
 
-1. Unzip the files in the release to a folder.
-2. Run the `install.ps1` command (Open Powershell as Administrator). (This uses the `InstallUtil` from the .NET framework.)
-3. Open up Local Services (Control Panel > Administrative Tools > Services) and select "ModSecurityLog" and click "Start".
+1. [Download the Release zip file](https://github.com/truemed/ModSecurityLog/releases/download/v1.0/ModSecurityLogService.zip)
+2. Unzip the files in the release to a folder.
+3. Run the `install.ps1` command (Open Powershell as Administrator). (This uses the `InstallUtil` from the .NET framework.)
+4. Open up Local Services (Control Panel > Administrative Tools > Services) and select "ModSecurityLog" and click "Start".
 You may need to update the permissions on the folder to allow the "Network Service" user read access for the service to start.
 
 ## Configure ModSecurity
@@ -45,4 +46,4 @@ Ensure that you restart this windows service (ModSecurityLog) any time you make 
 
 ## How to uninstall
 1. Stop the service (Control Panel > Administrative Tools > Services > ModSecurityLog)
-2. Run the `install.ps1 -uninstall` command.
+2. Run the `install.ps1 -uninstall` command.  (Open Powershell as Administrator)
