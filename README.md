@@ -45,3 +45,7 @@ Ensure that you restart this windows service (ModSecurityLog) any time you make 
 ## How to uninstall
 1. Stop the service (Control Panel > Administrative Tools > Services > ModSecurityLog)
 2. Run the `install.ps1 -uninstall` command.  (Open Powershell as Administrator)
+
+## To Be Extended..
+This service could be extended to trigger IP Restrictions on an external firewall or send an alert to an admin of attack velocity.
+These are both ideas of modules that could use the ModSecurity data to trigger actions to do something about the alerts.
