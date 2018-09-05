@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration.Install;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,6 +15,10 @@ namespace ModSecurityLogService
         public Installer()
         {
             InitializeComponent();
+
+            // Add EventLog registered source.
+            if (!EventLog.SourceExists("ModSecurityLog"))
+                EventLog.CreateEventSource("ModSecurityLog", "Application");
         }
     }
 }

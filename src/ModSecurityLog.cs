@@ -39,11 +39,11 @@ namespace ModSecurityLogService
             Exception e = (Exception)args.ExceptionObject;
             if (e.InnerException != null)
             {
-                EventLog.WriteEntry("ModSecurityLogService", e.Message + " " + e.InnerException.Message, EventLogEntryType.Error);
+                EventLog.WriteEntry("ModSecurityLog", e.Message + " " + e.InnerException.Message, EventLogEntryType.Error);
             }
             else
             {
-                EventLog.WriteEntry("ModSecurityLogService", e.Message, EventLogEntryType.Error);
+                EventLog.WriteEntry("ModSecurityLog", e.Message, EventLogEntryType.Error);
             }
         }
 
@@ -76,7 +76,7 @@ namespace ModSecurityLogService
 
                         if (_eventLog)
                         {
-                            EventLog.WriteEntry("ModSecurityLogService", "Logged " + (secLog.audit_data?.action?.message ?? ""), EventLogEntryType.Information);
+                            EventLog.WriteEntry("ModSecurityLog", "Logged " + (secLog.audit_data?.action?.message ?? ""), EventLogEntryType.Information);
                         }
                     }
 
@@ -92,7 +92,7 @@ namespace ModSecurityLogService
                 }
                 catch (Exception ex)
                 {
-                    EventLog.WriteEntry("ModSecurityLogService", "Error " + ex.Message, EventLogEntryType.Warning);
+                    EventLog.WriteEntry("ModSecurityLog", "Error " + ex.Message, EventLogEntryType.Warning);
                 }
             }
         }
